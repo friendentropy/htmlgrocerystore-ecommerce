@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    font-family: 'Arial', sans-serif;
+}
+
+body{
+    min-height: 200vh;
+    margin: 0;
+    font-size: 1.25rem;
+    color: white;
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    gap: 4rem;
+}
+
+nav{
+    position: sticky;
+    top: 0;
+    max-height: 100svh;
+    background-color: #165b9f;
+}
+.nav-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: grid;
+    gap: 2rem;
+    padding-block: 2rem;
+    font-size: 2rem;
+}
+
+.nav-list li {
+    padding: 1rem 2rem;
+    margin-left: 2rem;
+    border-radius: 100vw 0 0 100vw;
+
+}
+
+.nav-list li.active {
+    background: #ffffff;
+    position: relative;
+}
+
+.nav-list li.active::before,
+.nav-list li.active::after{
+    --border-radius: 2rem;
+
+    content: '';
+    position: absolute;
+    width: var(--border-radius);
+    height: var(--border-radius);
+    right: 0;
+}
+.nav-list li.active::before{
+    top: calc(var(--border-radius) * -1);
+    border-radius: 0 0 100vw 0;
+    box-shadow: 10px 10px 0 10px #ffffff;
+
+ }
+.nav-list li.active::after{
+    border-radius: 0 100vw 0 0;
+    box-shadow: 10px -10px 0 10px #ffffff;
+    bottom: calc(var(--border-radius) * -1);
+}
+
+
+.nav-list a {
+    color: #030303;
+    text-decoration: none;
+}
